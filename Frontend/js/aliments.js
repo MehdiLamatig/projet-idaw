@@ -1,7 +1,7 @@
 let currentMaxId = 1; 
 let aliments = [];
 let currentEditedFoodId =-1;
-let urlBackendPrefix = "http://localhost/IDAW/projet%20S&M/Backend/";
+let urlBackendPrefix = "http://localhost/IDAW/projet-idaw/Backend/";
 
 $(document).ready(function(){
     $.getJSON(urlBackendPrefix+"afficheAliment.php", function(data){ 

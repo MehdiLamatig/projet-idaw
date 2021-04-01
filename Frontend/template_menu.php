@@ -2,7 +2,8 @@
 function renderMenuToHTML($currentPageId) {
     $mymenu = array(
         'accueil' => 'Accueil',
-        'aliments' => 'Aliments',);
+        'aliments' => 'Aliments',
+        'journal' => 'Journal',);
 
     echo "<nav class='navbar navbar-expand-lg navbar-light' style='background-color: #9ACD32;'>";
     echo '<a class="navbar-brand"> IMangerMieux </a>';

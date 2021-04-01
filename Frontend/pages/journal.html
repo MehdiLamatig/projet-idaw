@@ -1,0 +1,24 @@
+<!-- <script src="Frontend/js/journal.js"></script> -->
+
+<div class="conteneur-flexible ligne ">
+<div class="element-flexible bleu-clair element-hw-autres"> 
+<!--     
+    <table class = "tableau-formulaire">
+    <thead>
+        <tr>
+            <th>Nom </th>
+            <th>Type </th>
+        </tr>
+    </thead>
+
+    <tbody id="table-content">
+
+    </tbody>
+</table> -->
+
+<form id="AddFoodForm" onsubmit="onFormSubmit();" autocomplete="off">
+    <p>Aliment <br id="contenu-aliment"> <select id="IDaliment" name="aliment"></p>
+    <p>Quantité (en g) <br> <input type="text" id="IDquantite" name="quantite" value="" required></p>
+    <p>Date <br> <input type="date" id="IDdate" name="date" value="" required></p>
+    <p><button type="submit">Ajouter</button></p>
+</form>

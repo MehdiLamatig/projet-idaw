@@ -1,0 +1,23 @@
+<script src="Frontend/js/aliments.js"></script>
+
+<div class="conteneur-flexible ligne ">
+    <div class="element-flexible bleu-clair element-hw-autres"> 
+    
+    <table class = "tableau-formulaire">
+    <thead>
+        <tr>
+            <th>Nom </th>
+            <th>Type </th>
+        </tr>
+    </thead>
+
+    <tbody id="table-content">
+
+    </tbody>
+</table>
+
+<form id="AddFoodForm" onsubmit="onFormSubmit();" autocomplete="off">
+    <p>Nom <br id="contenu-nom"> <input type="text" id="IDnom" name="nom"></p>
+    <p>Type <br> <input type="text" id="IDtype" name="type"></p>
+    <p><button type="submit">Ajouter</button></p>
+</form>

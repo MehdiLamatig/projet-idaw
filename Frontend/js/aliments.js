@@ -65,22 +65,9 @@ function ajouteAliment(newFood){
     $("#table-content").append
             (`<tr id=aliments-${newFood.id}> 
             <td> ${newFood.nom}  </td> <td> 
-            ${newFood.type}  </td> <td><button onclick="edit(${newFood.id})" style="color:blue">Modifier</button>  <button onclick="remove(${newFood.id})" style="color:blue">Supprimer</button> </td> </tr>`);
+            ${newFood.type}  </td> <td><button onclick="remove(${newFood.id})" style="color:red">Supprimer</button> </td> </tr>`);
                 
     currentMaxId++;
-}
-
-function AjaxChangeAliment(aliment){
-    $.ajax({
-
-            url: urlBackendPrefix+"editAliment.php",
-            method: "POST",
-            dataType : "json",
-            data : aliment
-        })
-        .always(function(response){
-            console.log(response);
-        });
 }
 
 function AjaxSupprimeAliment(id){
@@ -95,28 +82,8 @@ function AjaxSupprimeAliment(id){
         });
 }
 
-
-function edit(id){
-    currentEditedFoodId = id;
-    onForm(aliments[currentEditedFoodId].Nom,
-            aliments[currentEditedFoodId].Type
-        );
-
-}
-
 function remove(id){
     aliments.splice(id,1);
     $("#aliments-"+id).empty();
     AjaxSupprimeAliment(id);
-}
-
-
-function editAliment(newFood){
-    newFood.id = currentEditedFoodId;
-    aliments[newFood.id] = newFood;
-    $("#aliments-"+newFood.id).empty();
-    $("#aliments-"+newFood.id).append(`<td> 
-            ${newFood.nom}  </td> <td> 
-            ${newFood.type}  </td> <td>
-            <button onclick="edit(${newFood.id})" style="color:blue">Edit</button>  <button onclick="remove(${newFood.id})" style="color:blue">Remove</button> </td>`);
 }

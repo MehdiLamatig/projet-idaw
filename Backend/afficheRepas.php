@@ -9,7 +9,9 @@
     $dbco = new PDO("mysql:host=$servname;dbname=$dbname;charset=utf8", $user, $pass);
     $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $infosAliments = $dbco->prepare("SELECT Date, Heure FROM `Repas`");
+    $infosAliments = $dbco->prepare("SELECT repas.Date, repas.Heure, repas.ID, composer.Quantite, aliments.Nom  FROM repas
+    JOIN composer ON repas.ID = composer.ID
+    JOIN aliments ON composer.Code = aliments.Code");
     $infosAliments->execute();
 
     $resultatinfosAliments = $infosAliments->fetchAll(PDO::FETCH_ASSOC);

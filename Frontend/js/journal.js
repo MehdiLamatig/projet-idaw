@@ -8,9 +8,10 @@ $(document).ready(function(){
         REPAS = data;
         $.each(REPAS, function(i, a){
             let repas = {};
+            repas.aliment = a.aliment;
             repas.date = a.date;
             repas.heure = a.heure; 
-            repas.quantite=a.quantite;
+            repas.quantite = a.quantite;
             ajouteRepas(repas);
         });
     });
@@ -32,6 +33,7 @@ function AjaxEnvoieRepas(repas){
 }
 
 function onForm(date,heure,quantite){
+    $("#IDaliment").val(aliment);
     $("#IDdate").val(date);
     $("#IDheure").val(heure);
     $("#IDquantite").val(quantite);
@@ -41,19 +43,20 @@ function onForm(date,heure,quantite){
 function onFormSubmit(){
     event.preventDefault();
     let newFood = {};
+    newFood.aliment = $("#IDaliment").val();
     newFood.date = $("#IDdate").val();
     newFood.heure = $("#IDheure").val();
     newFood.quantite = $("#IDquantite").val();
-    if (newFood.nom != ''){
+    if (newFood.date != ''){
         if (currentEditedFoodId >= 0){
             currentFoodId = -1;
-            onForm("","");
+            onForm("","","","");
         }
         else{
             REPAS.push(newFood);
             ajouteRepas(newFood);
             AjaxEnvoieRepas(newFood);
-            onForm("","");
+            onForm("","","","");
         }
     }
 }
@@ -61,11 +64,12 @@ function onFormSubmit(){
 
 function ajouteRepas(newFood){
     newFood.id = currentMaxId;
-    $("#data_table").append
+    $("#table-content").append
             (`<tr id=REPAS-${newFood.id}> 
+            <td> ${newFood.aliment}  </td> <td>
             <td> ${newFood.date}  </td> <td> 
-            ${newFood.heure}  </td> <td> 
-            ${newFood.quantite}  </td></tr>`);
+            ${newFood.heure}  </td>
+            <td> ${newFood.quantite}  </td></tr>`);
                 
     currentMaxId++;
 }

@@ -3,11 +3,11 @@
 <div class="conteneur-flexible ligne ">
 <div class="element-flexible bleu-clair element-hw-autres"> 
 
-<form onsubmit="onFormSubmit();" autocomplete="off">
-    <p>Aliment <br id="contenu-aliment"> <select id="IDaliment" name="aliment"></select></p>
+<form id="AddFoodForm" onsubmit="onFormSubmit();" autocomplete="off">
+    <p>Aliment <br id="contenu-aliment"> <input type="text" id="IDaliment" name="aliment" value="" required></select></p>
     <p>Quantité (en g) <br> <input type="text" id="IDquantite" name="quantite" value="" required></p>
     <p>Date <br> <input type="date" id="IDdate" name="date" value="" required></p>
-    <p>Heure <br> <input type="text" id="IDheure" name="heure" value="" required></p>
+    <p>Heure <br> <input type="time" id="IDheure" name="heure" value="" required></p>
     <p><button type="submit">Ajouter</button></p>
 </form>
 
@@ -18,7 +18,6 @@
             <th> Heure de consommation</th>
             <th> Quantité (g)</th>
             <th> Aliment </th>
-            <th> Type </th>
         </tr>
     </thead>
 

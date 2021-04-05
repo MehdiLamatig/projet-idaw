@@ -9,7 +9,11 @@ $(document).ready(function(){
         $.each(aliments, function(i, a){
             let aliment = {};
             aliment.nom = a.Nom;
-            aliment.type = a.Type; 
+            aliment.type = a.Type;
+            aliment.energie = a.Energie;
+            aliment.glucides = a.Glucides;
+            aliment.lipides = a.Lipides;
+            aliment.proteines = a.Proteines;
             ajouteAliment(aliment);
         });
     });
@@ -33,9 +37,11 @@ function AjaxEnvoieAliment(aliment){
 function onForm(nom,type){
     $("#IDnom").val(nom);
     $("#IDtype").val(type);
+    $("#IDenergie").val(type);
+    $("#IDglucides").val(type);
+    $("#IDlipides").val(type);
+    $("#IDproteines").val(type);
 }
-
-
 
 
 function onFormSubmit(){
@@ -43,7 +49,10 @@ function onFormSubmit(){
     let newFood = {};
     newFood.nom = $("#IDnom").val();
     newFood.type = $("#IDtype").val();
-    // $("p").remove("#contenu-removable");
+    // newFood.energie = $("#IDenergie").val();
+    // newFood.glucides = $("#IDglucides").val();
+    // newFood.lipides = $("#IDlipides").val();
+    // newFood.proteines = $("#IDproteines").val();
     if (newFood.nom != ''){
         if (currentEditedFoodId >= 0){
             currentFoodId = -1;
@@ -57,7 +66,6 @@ function onFormSubmit(){
         }
     }
 }
-
 
 
 function ajouteAliment(newFood){

@@ -5,16 +5,14 @@ function renderMenuToHTML($currentPageId) {
         'aliments' => 'Aliments',
         'journal' => 'Journal',);
 
-    echo "<nav class='navbar navbar-expand-lg navbar-light' style='background-color: #00BFFF;'>";
-    echo '<a class="navbar-brand"> iMangerMieux </a>';
-    echo '<div class="collapse navbar-collapse" id="navbarSupportedContent">';
-    echo '<ul class="navbar-nav mr-auto">';
+    echo "<nav class=\"menu\">";
+    echo '<h1> iMangerMieux </h1>';
     foreach($mymenu as $pageId => $pageParameters) {
         echo "<li><a ";
         if ($currentPageId==$pageId)
             echo "class=\"selected\"";
         echo "href=index.php?page=$pageId.html>$pageParameters</a></li>";
     }
-    echo "</u1></nav>";
+    echo "</nav>";
 }
 ?>

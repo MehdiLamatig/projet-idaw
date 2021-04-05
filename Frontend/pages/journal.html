@@ -3,21 +3,21 @@
 <div class="conteneur-flexible ligne ">
 <div class="element-flexible bleu-clair element-hw-autres"> 
 
-<form id="AddFoodForm" onsubmit="onFormSubmit();" autocomplete="off">
-    <p>Aliment <br id="contenu-aliment"> <select id="IDaliment" name="aliment"></p>
-    <p>Quantité (en g) <br> <input type="text" id="IDquantite" name="quantite" value="" required></p>
-    <p>Date <br> <input type="date" id="IDdate" name="date" value="" required></p>
-    <p>Heure <br> <input type="heure" id="IDheure" name="heure" value="" required></p>
+<form onsubmit="onFormSubmit();" autocomplete="off">
+    <p>Aliment <br id="contenu-aliment"> <select id="aliment" name="aliment"></select></p>
+    <p>Quantité (en g) <br> <input type="text" id="quantite" name="quantite" value="" required></p>
+    <p>Date <br> <input type="date" id="date" name="date" value="" required></p>
+    <p>Heure <br> <input type="text" id="heure" name="heure" value="" required></p>
     <p><button type="submit">Ajouter</button></p>
 </form>
 
-<table class = "tableau-formulaire" style="width:100%">
+<table id="data_table" style="width:100%">
     <thead>
         <tr>
-            <th> Aliment </th>
-            <th> Quantité (g) </th>
             <th> Date de consommation </th>
             <th> Heure de consommation</th>
+            <th> Quantité (g)</th>
+            <th> Aliment </th>
             <th> Type </th>
         </tr>
     </thead>
@@ -26,4 +26,3 @@
 
     </tbody>
 </table>
-

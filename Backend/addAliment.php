@@ -4,7 +4,7 @@
   $dbname = 'imangermieux';
   $user = 'root';
   $pass = '';
-              
+             
   try{
     $dbco = new PDO("mysql:host=$servname;dbname=$dbname;charset=utf8", $user, $pass);
     $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

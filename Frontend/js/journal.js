@@ -32,18 +32,18 @@ function AjaxEnvoieRepas(repas){
 }
 
 function onForm(date,heure,quantite){
-    $("#date").val(date);
-    $("#heure").val(heure);
-    $("#quantite").val(quantite);
+    $("#IDdate").val(date);
+    $("#IDheure").val(heure);
+    $("#IDquantite").val(quantite);
 }
 
 
 function onFormSubmit(){
     event.preventDefault();
     let newFood = {};
-    newFood.date = $("#date").val();
-    newFood.heure = $("#heure").val();
-    newFood.quantite = $("#quantite").val();
+    newFood.date = $("#IDdate").val();
+    newFood.heure = $("#IDheure").val();
+    newFood.quantite = $("#IDquantite").val();
     if (newFood.nom != ''){
         if (currentEditedFoodId >= 0){
             currentFoodId = -1;

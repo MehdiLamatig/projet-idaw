@@ -6,7 +6,7 @@ function renderMenuToHTML($currentPageId) {
         'journal' => 'Journal',);
 
     echo "<nav class='navbar navbar-expand-lg navbar-light' style='background-color: #00BFFF;'>";
-    echo '<a class="navbar-brand"> IMangerMieux </a>';
+    echo '<a class="navbar-brand"> iMangerMieux </a>';
     echo '<div class="collapse navbar-collapse" id="navbarSupportedContent">';
     echo '<ul class="navbar-nav mr-auto">';
     foreach($mymenu as $pageId => $pageParameters) {

@@ -1,7 +1,7 @@
 let currentMaxId = 1; 
 let aliments = [];
 let currentEditedFoodId =-1;
-let urlBackendPrefix = "http://localhost/IDAW/projet-idaw/Backend/";
+let urlBackendPrefix = "http://localhost/projetSM/Backend/";
 
 $(document).ready(function(){
     $.getJSON(urlBackendPrefix+"afficheAliment.php", function(data){ 
@@ -10,10 +10,6 @@ $(document).ready(function(){
             let aliment = {};
             aliment.nom = a.Nom;
             aliment.type = a.Type;
-            aliment.energie = a.Energie;
-            aliment.glucides = a.Glucides;
-            aliment.lipides = a.Lipides;
-            aliment.proteines = a.Proteines;
             ajouteAliment(aliment);
         });
     });
@@ -37,11 +33,9 @@ function AjaxEnvoieAliment(aliment){
 function onForm(nom,type){
     $("#IDnom").val(nom);
     $("#IDtype").val(type);
-    $("#IDenergie").val(type);
-    $("#IDglucides").val(type);
-    $("#IDlipides").val(type);
-    $("#IDproteines").val(type);
 }
+
+
 
 
 function onFormSubmit(){
@@ -49,10 +43,7 @@ function onFormSubmit(){
     let newFood = {};
     newFood.nom = $("#IDnom").val();
     newFood.type = $("#IDtype").val();
-    // newFood.energie = $("#IDenergie").val();
-    // newFood.glucides = $("#IDglucides").val();
-    // newFood.lipides = $("#IDlipides").val();
-    // newFood.proteines = $("#IDproteines").val();
+    // $("p").remove("#contenu-removable");
     if (newFood.nom != ''){
         if (currentEditedFoodId >= 0){
             currentFoodId = -1;
@@ -68,12 +59,13 @@ function onFormSubmit(){
 }
 
 
+
 function ajouteAliment(newFood){
     newFood.id = currentMaxId;
     $("#table-content").append
             (`<tr id=aliments-${newFood.id}> 
             <td> ${newFood.nom}  </td> <td> 
-            ${newFood.type}  </td> <td><button onclick="remove(${newFood.id})" style="color:red">Supprimer</button> </td> </tr>`);
+            ${newFood.type}  </td><td><button onclick="remove(${newFood.id})" style="color:red">Supprimer</button> </td> </tr>`);
                 
     currentMaxId++;
 }

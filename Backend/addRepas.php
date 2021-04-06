@@ -1,9 +1,9 @@
 <?php
 
   $servname = 'localhost';
-  $dbname = 'imangermieux';
+  $dbname = 'imanger';
   $user = 'root';
-  $pass = '';
+  $pass = 'root';
 
   print_r($_POST);
 

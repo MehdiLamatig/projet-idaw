@@ -1,7 +1,7 @@
 let currentMaxId = 1; 
 let REPAS = [];
 let currentEditedFoodId =-1;
-let urlBackendPrefix = "http://localhost/IDAW/projet-idaw/Backend/";
+let urlBackendPrefix = "http://localhost/projetSM/Backend/";
 
 $(document).ready(function(){
     $.getJSON(urlBackendPrefix+"afficheRepas.php", function(data){ 
@@ -66,8 +66,8 @@ function ajouteRepas(newFood){
     newFood.id = currentMaxId;
     $("#table-content").append
             (`<tr id=REPAS-${newFood.id}> 
-            <td> ${newFood.date}  </td>
-            <td> ${newFood.heure}  </td>
+            <td> ${newFood.date}  </td> <td> 
+            ${newFood.heure}  </td>
             <td> ${newFood.quantite}  </td>
             <td> ${newFood.aliment}  </td> </tr>`);
                 

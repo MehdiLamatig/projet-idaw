@@ -8,10 +8,10 @@ $(document).ready(function(){
         REPAS = data;
         $.each(REPAS, function(i, a){
             let repas = {};
-            repas.aliment = a.aliment;
-            repas.date = a.date;
-            repas.heure = a.heure; 
-            repas.quantite = a.quantite;
+            repas.date = a.Date;
+            repas.heure = a.Heure; 
+            repas.quantite = a.Quantite;
+            repas.aliment = a.Nom;
             ajouteRepas(repas);
         });
     });
@@ -66,10 +66,10 @@ function ajouteRepas(newFood){
     newFood.id = currentMaxId;
     $("#table-content").append
             (`<tr id=REPAS-${newFood.id}> 
-            <td> ${newFood.aliment}  </td> <td>
-            <td> ${newFood.date}  </td> <td> 
-            ${newFood.heure}  </td>
-            <td> ${newFood.quantite}  </td></tr>`);
+            <td> ${newFood.date}  </td>
+            <td> ${newFood.heure}  </td>
+            <td> ${newFood.quantite}  </td>
+            <td> ${newFood.aliment}  </td> </tr>`);
                 
     currentMaxId++;
 }
